@@ -1,7 +1,17 @@
+"""Algorithm to find three numbers in an array that sum up to a given value p."""
 import unittest
 
 
 def merge_sort(arr):
+    """
+    Sorts the given array using the merge sort algorithm.
+
+    Args:
+        arr: The array to be sorted.
+
+    Returns:
+        The sorted array.
+    """
     if len(arr) <= 1:
         return arr
 
@@ -16,6 +26,7 @@ def merge_sort(arr):
 
 
 def merge(left, right):
+    """Merges two arrays into one sorted array"""
     merged = []
     i = j = 0
 
@@ -33,12 +44,22 @@ def merge(left, right):
 
 
 def find_three_numbers(arr, p):
+    """
+    Finds three numbers in the given array that sum up to the given value p.
+
+    Args:
+        arr: The array to search for three numbers.
+        p: The target sum of three numbers.
+
+    Returns:
+        A list of three numbers that sum up to p, if found. Otherwise, returns None.
+    """
     arr = merge_sort(arr)
-    N = len(arr)
+    n = len(arr)
     count = 0
-    for i in range(N - 2):
+    for i in range(n - 2):
         left = i + 1
-        right = N - 1
+        right = n - 1
         count += 1
         while left < right:
             count += 1
@@ -46,7 +67,7 @@ def find_three_numbers(arr, p):
             if current_sum == p:
                 print(count)
                 return True
-            elif current_sum < p:
+            if current_sum < p:
                 left += 1
             else:
                 right -= 1
@@ -54,7 +75,9 @@ def find_three_numbers(arr, p):
 
 
 class TestFindThreeNumbers(unittest.TestCase):
+    """Unit tests for find_three_numbers"""
     def test_find_three_numbers(self):
+        """Test find_three_numbers"""
         arr = [1, 2, 3]
         p = 6
         self.assertTrue(find_three_numbers(arr, p))
