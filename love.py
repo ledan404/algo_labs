@@ -56,16 +56,12 @@ def find_three_numbers(arr: list, p : int) -> bool:
     """
     arr = merge_sort(arr)
     n = len(arr)
-    count = 0
     for i in range(n - 2):
         left = i + 1
         right = n - 1
-        count += 1
         while left < right:
-            count += 1
             current_sum = arr[i] + arr[left] + arr[right]
             if current_sum == p:
-                print(count)
                 return True
             if current_sum < p:
                 left += 1
