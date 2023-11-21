@@ -1,12 +1,16 @@
 """
 This module contains a unit test for the `optimal_order` function in the `govern` module.
-The `TestOptimalOrder` class contains a single test case that checks if the function returns the expected result.
-The test data is written to a file, the function is called with the input file and an output file, and the result is compared to the expected output.
+The `TestOptimalOrder` class contains a single test case that checks 
+if the function returns the expected result.
+The test data is written to a file, the function is called with the input file and an output file,
+and the result is compared to the expected output.
 The input and output files are then deleted.
 """
 import unittest
 import os
-from govern import optimal_order
+import sys
+sys.path.append('/Users/ledan404/projects/labs_algo/lab5') # past your path here to root of repo
+from src.govern import optimal_order
 
 
 class TestOptimalOrder(unittest.TestCase):

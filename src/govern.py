@@ -1,9 +1,11 @@
 """
-This module contains functions for performing a topological sort on a directed acyclic graph and writing the optimal order of tasks to an output file.
+This module contains functions for performing a topological sort 
+on a directed acyclic graph and writing the optimal order of tasks to an output file.
 
 Functions:
 - topological_sort(graph: dict) -> list: Perform a topological sort on a directed acyclic graph.
-- optimal_order(input_file: str, output_file: str) -> None: Reads a file containing dependencies between tasks and writes to an output file the optimal order in which to perform the tasks.
+- optimal_order(input_file: str, output_file: str) -> None: Reads a file containing dependencies 
+  between tasks and writes to an output file the optimal order in which to perform the tasks.
 """
 
 
@@ -23,7 +25,7 @@ def topological_sort(graph) -> list:
 
     def dfs(node) -> None:
         """
-        Depth-first search algorithm that traverses a graph starting from a given node.
+        Depth-fist search algorithm that traverses a graph starting from a given node.
 
         Args:
             node: The starting node for the traversal.
@@ -46,11 +48,13 @@ def topological_sort(graph) -> list:
 
 def optimal_order(input_file, output_file):
     """
-    Reads a file containing dependencies between tasks and writes to an output file the optimal order in which to perform the tasks.
+    Reads a file containing dependencies between tasks and writes
+    to an output file the optimal order in which to perform the tasks.
 
     Args:
     - input_file (str): path to the input file containing dependencies between tasks
-    - output_file (str): path to the output file to write the optimal order in which to perform the tasks
+    - output_file (str): path to the output file to write
+    the optimal order in which to perform the tasks
 
     Returns:
     - None
